@@ -1,0 +1,85 @@
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  background-color: aquamarine;
+  color: yellow;
+  padding: 10px;
+}
+
+#container {
+  background-color: red;
+  padding: 20px;
+  border-radius: 20px;
+  width: 500px;
+  margin: auto;
+}
+
+/* For the Dom */
+.inline {
+  display: inline-block;
+  border: darkslategray 1px solid;
+  width: 25px;
+  height: 25px;
+}
+
+.hoverColor {
+  background-color: black;
+}
+
+/* .inline:hover {
+  background-color: cadetblue;
+} */
+
+/* Top */
+.top {
+  margin-bottom: 10px;
+}
+
+/* Main */
+main {
+  display: inline-block;
+  background-color: white;
+  width: auto;
+  overflow: scroll;
+  line-height: 0;
+  border: 1.5px solid gray;
+}
+
+/* Bottom */
+.bottom {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 30px;
+}
+
+.options div {
+  background-color: yellow;
+  font-size: 0.8rem;
+  color: black;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.bottom input,
+#resize {
+  padding: 4px 8px;
+  border-radius: 10px;
+}
