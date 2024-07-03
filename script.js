@@ -13,13 +13,14 @@ const createDivs = function (ele, counts) {
     }
   }
 };
+
 const main = document.querySelector("main");
-createDivs(main, 20);
+createDivs(main, 15);
 
 // 2. Implementing drawing
 const inlineList = document.querySelectorAll(".inline");
 for (let inline of inlineList) {
   inline.addEventListener("mouseenter", () => {
-    div.classList.add("hoverColor");
+    inline.classList.add("hoverColor");
   });
 }
