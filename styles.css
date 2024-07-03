@@ -14,27 +14,23 @@ body {
 
 #container {
   background-color: red;
-  padding: 20px;
   border-radius: 20px;
-  width: 500px;
+  width: 600px;
   margin: auto;
+  padding: 20px;
 }
 
 /* For the Dom */
 .inline {
   display: inline-block;
-  border: darkslategray 1px solid;
-  width: 25px;
-  height: 25px;
+  border: darkslategray 0.1px solid;
+  box-sizing: border-box;
+  vertical-align: top;
 }
 
 .hoverColor {
   background-color: black;
 }
-
-/* .inline:hover {
-  background-color: cadetblue;
-} */
 
 /* Top */
 .top {
@@ -45,9 +41,11 @@ body {
 main {
   display: inline-block;
   background-color: white;
-  width: auto;
+  width: 500px;
+  height: 500px;
   overflow: scroll;
   line-height: 0;
+  box-sizing: content-box;
   border: 1.5px solid gray;
 }
 
