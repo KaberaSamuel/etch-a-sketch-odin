@@ -15,7 +15,7 @@ const createDivs = function (ele, counts) {
 };
 
 const main = document.querySelector("main");
-createDivs(main);
+createDivs(main, 10);
 
 // 2. Implementing drawing
 const inlineList = document.querySelectorAll(".inline");
