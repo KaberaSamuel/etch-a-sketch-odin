@@ -1,3 +1,6 @@
+// Node list of all grid divs
+let allGridDivs = "";
+
 // 1. Creating grids
 const createDivs = function (ele, counts) {
   let size = 400 / counts;
@@ -14,16 +17,13 @@ const createDivs = function (ele, counts) {
       ele.appendChild(div);
     }
   }
+  allGridDivs = document.querySelectorAll(".inline");
 };
-
-// Node list of all grid divs
-const allGridDivs = document.querySelectorAll(".inline");
-console.log(allGridDivs);
 
 const main = document.querySelector("main");
 createDivs(main, 10);
 
-// 2. Implementing user preferred resolution+
+// 2. Implementing user preferred resolution
 const input = document.querySelector("input");
 input.addEventListener("keypress", (event) => {
   const value = Number(input.value);
@@ -32,8 +32,17 @@ input.addEventListener("keypress", (event) => {
       main.textContent = "";
       createDivs(main, value);
     } else {
-      alert(input.placeholder);
-      console.log(value, typeof value);
+      alert("Sorry, Allowed range is from 2 to 80");
     }
+  }
+});
+
+// 3. Implementing Erasing Functionality
+const erasebtn = document.querySelector("#erase");
+erasebtn.addEventListener("click", () => {
+  for (let div of allGridDivs) {
+    div.addEventListener("mouseenter", () => {
+      div.classList.remove("hoverColor");
+    });
   }
 });
