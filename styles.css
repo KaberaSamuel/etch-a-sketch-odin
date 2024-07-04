@@ -24,7 +24,7 @@ body {
 /* classes to be inserted by DOM */
 .inline {
   display: inline-block;
-  border: darkslategray 0.1px solid;
+  border: darkslategray 0.001px solid;
   box-sizing: border-box;
   vertical-align: top;
 }
@@ -42,9 +42,9 @@ body {
 main {
   display: inline-block;
   background-color: white;
-  width: 500px;
-  height: 500px;
-  overflow: scroll;
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
   line-height: 0;
   box-sizing: content-box;
   border: 1.5px solid gray;
