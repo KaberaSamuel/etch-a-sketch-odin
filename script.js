@@ -32,7 +32,7 @@ input.addEventListener("keypress", (event) => {
       main.textContent = "";
       createDivs(main, value);
     } else {
-      alert("Sorry, Allowed range is from 2 to 80");
+      alert("Sorry, Allowed range is from 2 to 70");
     }
   }
 });
@@ -59,3 +59,7 @@ draw_erase.addEventListener("click", () => {
 
 // 4. Implementing resetting functionality
 const resetbtn = document.querySelector("#reset");
+resetbtn.addEventListener("click", () => {
+  main.textContent = "";
+  createDivs(main, 10);
+});
