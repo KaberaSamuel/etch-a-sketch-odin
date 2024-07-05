@@ -37,12 +37,25 @@ input.addEventListener("keypress", (event) => {
   }
 });
 
-// 3. Implementing Erasing Functionality
-const erasebtn = document.querySelector("#erase");
-erasebtn.addEventListener("click", () => {
-  for (let div of allGridDivs) {
-    div.addEventListener("mouseenter", () => {
-      div.classList.remove("hoverColor");
-    });
+// 3. Implementing erasing and drawing
+const draw_erase = document.querySelector("#draw-erase");
+draw_erase.addEventListener("click", () => {
+  if (draw_erase.textContent === "Erase") {
+    draw_erase.textContent = "Draw";
+    for (let div of allGridDivs) {
+      div.addEventListener("mouseenter", () => {
+        div.classList.remove("hoverColor");
+      });
+    }
+  } else {
+    draw_erase.textContent = "Erase";
+    for (let div of allGridDivs) {
+      div.addEventListener("mouseenter", () => {
+        div.classList.add("hoverColor");
+      });
+    }
   }
 });
+
+// 4. Implementing resetting functionality
+const resetbtn = document.querySelector("#reset");
