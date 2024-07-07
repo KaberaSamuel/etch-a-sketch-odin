@@ -24,7 +24,7 @@ body {
 /* classes to be inserted by DOM */
 .inline {
   display: inline-block;
-  border: darkslategray 0.001px solid;
+  border: rgba(47, 79, 79, 0.418) 0.001px solid;
   box-sizing: border-box;
   vertical-align: top;
 }
@@ -32,7 +32,6 @@ body {
 .hoverColor {
   background-color: black;
 }
-
 /* Top */
 .top {
   margin-bottom: 10px;
@@ -69,12 +68,12 @@ main {
   background-color: yellow;
   font-size: 0.8rem;
   color: black;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 20px;
+  border-radius: 30px;
 }
 
 .bottom input,

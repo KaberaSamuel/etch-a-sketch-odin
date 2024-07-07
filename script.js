@@ -1,6 +1,12 @@
 // Node list of all grid divs
 let allGridDivs = "";
 
+// Functions
+const resetGrid = function (resolution = 20) {
+  main.textContent = "";
+  createDivs(main, resolution);
+};
+
 // 1. Creating grids
 const createDivs = function (ele, counts) {
   let size = 400 / counts;
@@ -21,19 +27,21 @@ const createDivs = function (ele, counts) {
 };
 
 const main = document.querySelector("main");
-createDivs(main, 10);
+createDivs(main, 20);
 
 // 2. Implementing user preferred resolution
 const input = document.querySelector("input");
+let inputChoice = 20;
 input.addEventListener("keypress", (event) => {
-  const value = Number(input.value);
+  let value = Number(input.value);
   if (event.key === "Enter") {
-    if (value > 1 && value < 71) {
-      main.textContent = "";
-      createDivs(main, value);
+    if (value > 1 && value < 91) {
+      inputChoice = value;
+      resetGrid(value);
     } else {
-      alert("Sorry, Allowed range is from 2 to 70");
+      alert("Sorry, Allowed range is from 2 to 90");
     }
+    input.value = "";
   }
 });
 
@@ -59,7 +67,37 @@ draw_erase.addEventListener("click", () => {
 
 // 4. Implementing resetting functionality
 const resetbtn = document.querySelector("#reset");
-resetbtn.addEventListener("click", () => {
-  main.textContent = "";
-  createDivs(main, 10);
+resetbtn.addEventListener("click", resetGrid);
+
+// 5. Implementing random color functionality
+const randomNumber = function (min, max) {
+  let number = Math.random() * (max - min + 1) + min;
+  return Math.trunc(number);
+};
+
+const randomColor = function () {
+  return `rgb(${randomNumber(0, 256)}, ${randomNumber(0, 256)}, ${randomNumber(
+    0,
+    256
+  )})`;
+};
+
+const randombtn = document.querySelector("#random");
+randombtn.addEventListener("click", () => {
+  resetGrid(inputChoice);
+  if (randombtn.textContent === "Random") {
+    randombtn.textContent = "Black";
+    for (let div of allGridDivs) {
+      div.addEventListener("mouseenter", () => {
+        div.style.backgroundColor = randomColor();
+      });
+    }
+  } else {
+    randombtn.textContent = "Random";
+    for (let div of allGridDivs) {
+      div.addEventListener("mouseenter", () => {
+        div.style.backgroundColor = "black";
+      });
+    }
+  }
 });
