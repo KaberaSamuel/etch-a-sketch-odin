@@ -84,7 +84,7 @@ draw_erase.addEventListener("click", () => {
 // 4. Implementing resetting functionality
 const resetbtn = document.querySelector("#reset");
 resetbtn.addEventListener("click", () => {
-  resolution = 15;
+  resolution = 25;
   randombtn.textContent = "Random";
   draw_erase.textContent = "Erase";
   createGrids();
